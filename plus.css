@@ -1,0 +1,680 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  background-color: white;
+  font-family: Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
+    sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+.topnavbar { /*Top of page */
+  display: flex;
+  padding: 0;
+  padding-top: 1em;
+  margin: auto;
+  padding-left: 1em;
+  align-items: center;
+  background-color: white;
+  z-index: 100;
+  position: fixed;
+  justify-content: space-between;
+  width: 100%;
+  padding-right: 1em;
+  @media screen and (max-width: 1024px) {
+    justify-content: start;
+    align-items: center;
+  }
+  @media screen and (max-width: 320px) {
+    position: relative;
+  }
+}
+.searchlogo { /*Contains logo and searchbar*/
+  display: flex;
+  align-items: center;
+}
+.searchbar { /*Element inside Searchlogo cover searchbar*/
+  height: 100%;
+  box-sizing: border-box;
+  border: thin solid #ccc;
+  border-radius: 1.8em;
+  outline: none;
+  font-size: 1em;
+  background-color: transparent;
+  padding: 9px 4px 9px 40px;
+  width: 50vw;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 13px center;
+  background-color: whitesmoke;
+}
+.rightnav { /*Under topnavi cover rightpart of topnavi*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+}
+.threenav ul { /*Under rightnav*/
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.threenav li {
+  list-style: none;
+  padding-left: 2em;
+  
+}
+.threenav a {
+  text-decoration: none;
+  color: #767676;
+}
+.threenav {
+  @media screen and (max-width: 1024px) {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+  }
+}
+.vertical-line { /*Vertical line under rightnav*/
+  margin-left: 2em;
+  border-left: 1px solid #ccc;
+  height: 3em;
+  margin-right: 2em;
+  @media screen and (max-width: 1024px) {
+    display: none;
+    margin:0;
+  }
+}
+.loginsubmit { /*Under rightnav cover login and submit button*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex: 1 0 auto;
+  @media screen and (max-width: 728px) {
+    display: none;
+    
+  }
+}
+.login a { /*Under loginsubmit class*/
+  text-decoration: none;
+  color: #767676;
+}
+#sumbitphoto { /*Set on submitphoto inside loginsubmit*/
+  background-color: #fff;
+  border: 1px solid #d1d1d1;
+  text-align: center;
+  color: #767676;
+  border-radius: 0.4em;
+  cursor: pointer;
+  width: 8em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Falldownnav { /*Element under rightnav*/
+  background-color: #fff;
+  border-width: 0;
+  margin-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  margin-top: 10%;
+}
+
+.wholebody { /*All content not include navbar*/
+  padding-top: 5em;
+  overflow: hidden;
+  @media screen and (max-width: 320px) {
+    padding-top: 0;
+  }
+}
+.topads { /*top of content in wholebody*/
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 11%;
+  margin-left: 4em;
+  margin-right: 4em;
+  padding-top: 3em;
+  grid-auto-rows: 1fr;
+  @media screen and (max-width: 320px) {
+    grid-template-columns: 1fr;
+    margin: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
+.information { /*Class inside .topads focus on information part*/
+  max-height: 800px;
+}
+.information h1 {
+  font-size: 3em;
+}
+.information ul {
+  list-style-type: none;
+  padding: 0;
+}
+.information li {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  margin-top: 1em;
+}
+#subplan { /*Inside .information*/
+  margin-top: 2em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 8px;
+  cursor: pointer;
+  align-items: center;
+}
+#yearly { /*Inside #subplan*/
+  align-items: center;
+  justify-content: center;
+}
+#yearly span {
+  margin-left: 0.5em;
+  padding: 0.5em;
+  background-color: lightskyblue;
+  border: white solid 1px;
+  border-radius: 0.5em;
+  font-size: 12px;
+  font-weight: 700;
+  color: blueviolet;
+}
+.getunsplash { /*Under .information */
+  margin-top: -0.8em;
+  color: white;
+  background-color: black;
+  border-radius: 0.3em;
+  padding: 1em 1.5em;
+  width: 60%;
+  text-align: center;
+  @media screen and (max-width: 320px) {
+    width: 100%;
+  }
+}
+.getunsplash a , .getunsplash a:hover{
+  color: white !important;
+  text-decoration: none;
+}
+.insidepicturegrid { /*Inside topads*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 200px);
+}
+.divide { /*Inside .insidepicturegrid*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+}
+.empty { /*Under .divide*/
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+.divide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.notdivide { /*Under .insidepicturegrod*/
+  background-color: rgba(250, 0, 255, 0.05);
+  grid-auto-rows: 1fr;
+}
+.notdivide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#whygounsplash { /*Div inside wholebody place under .topads*/
+  text-align: center;
+  font-size: 1.8em;
+  padding-top: 2em;
+  margin-top: 2em;
+  @media screen and (max-width: 758px) {
+    margin-top: 6em;
+    
+  }
+  @media screen and (max-width:320px){
+    margin-top: 0;
+  }
+}
+.gridwhygo { /*PLace under #whygounsplash and inside */
+  padding-left: 4em;
+  padding-right: 4em;
+  display: grid;
+  gap: 1.5em;
+  grid-template-areas: 
+  "a a"
+  "b c";
+  @media screen and (max-width: 768px) {
+    grid-template-areas:
+     "a"
+     "b"
+     "c";
+     gap: 1em;
+  }
+}
+.additionalimages { /*Inside .gridwhygo*/
+  grid-area: a;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  margin-top: 2em;
+  background-color: black;
+  background-size: cover;
+  border-radius: 1em;
+  overflow: hidden;
+  align-items: center;
+}
+.additionalimages img {
+  width: 100%;
+  height: 10%;
+  object-fit: cover;
+}
+.addiinfo { /*Inside .Addtitonalimages*/
+  padding: 3em;
+  color: white;
+  line-height: 1.5;
+  height: inherit;
+  font-size: 1.3em;
+}
+.addiinfo p {
+  color: lightgray;
+}
+.Twoblock1{ /*Inside .Gridwhygo*/
+  grid-area: b;
+  background-color: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  overflow: hidden;
+  height: 80%;
+}
+.Twoblock2{ /*Inside .Gridwhygo*/
+  grid-area: c;
+  background-color: black;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1em;
+  overflow: auto;
+  height: 80%;
+  @media screen and (max-width: 768px) {
+    margin-top: -7em;
+    height: 100%;
+  }
+}
+.Twoblock1 header,.Twoblock2 header{
+  padding: 4em 6em;
+}
+.Twoblock1 h1,.Twoblock2 h1{
+  font-size: 28px;
+}
+.Twoblock1 p,.Twoblock2 p{
+  font-size: 21px;
+}
+.Twoblock2 a{
+  font-size: 21px;
+  color: white;
+  font-weight: bold;
+}
+.Twoblock2 a:hover{
+  color: white !important;
+}
+.Twoblock1 img{
+  margin: auto;
+  height: auto;
+  width: 130%;
+  rotate: -5deg;
+}
+.Twoblock2 img{
+  margin-top: -7em;
+  width: 100%;
+  height: auto;
+  padding: 6em;
+  border-radius: 8em;
+}
+.unsplashpricing{ /*Inside .wholebody*/
+  text-align: center;
+}
+.unsplashpricing h1{
+  font-size: 3em;
+}
+.unsplashpricing p{
+  font-size: 1.5em;
+  font-weight: 300;
+}
+.tablist{ /*Inside .unsplashpricing*/
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.choice{ /*Inside .tablist*/
+  background-color: #f5f5f5;
+  padding: 0.4em;
+  border-radius: 1em;
+}
+.choice button{
+  color: black;
+  background-color: white;
+  padding: 0.4em 1em;
+  border: none;
+  border-radius: 1em;
+  cursor: pointer;
+  outline: none;
+}
+.choice button.active{
+  background-color: #f5f5f5;
+}
+.limited{ /*Inside .unsplashpricing*/
+  margin-top: 3em;
+  padding-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box{ /*Inside .limited*/
+  background-color: magenta;
+  color: white;
+  font-size: 1.3em;
+  border-radius: 0.7em;
+}
+.box h5{
+  padding: 1em;
+  padding-bottom: 0;
+  padding-top: 0.2em;
+}
+.extendbox{ /*Inside .box*/
+  padding: 2em;
+  margin:0.3em;
+  background-color: white;
+  color: black;
+  border-radius: 0.7em;
+  text-align: left;
+}
+.extendbox span{
+  color: gray;
+}
+#price{ /*Inside .extendbox*/
+  display: flex;
+  align-items: center;
+  padding: 1em;
+  padding-top: 0;
+  margin-top: -1.5em;
+  padding-right: 10em;
+  flex: 1 1 auto;
+  @media screen and (max-width: 320px) {
+    padding: 0;
+  }
+}
+
+#permonth{ /*Inside #price*/
+  display: flex;
+  flex-direction: column;
+}
+#permonth p{
+  font-size: 0.8em;
+  font-weight: 700;
+}
+.extendbox ul {
+  margin-top: -3em;
+  list-style-type: none;
+  padding: 0em 1em;
+}
+.extendbox li {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+.setcenter{ /*Use for set element point at center Inside .box*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.setcenter .getunsplash{/*.getunsplash inside . setcenter*/
+  margin-top: 0;
+  width: 90%;
+}
+div+.setcenter{
+  margin-top: 1em;
+}
+.renew{ /*Inside .setcenter*/
+  margin-left: 1em;
+  align-items: center;
+  column-gap: 0.5em;
+  display: flex;
+  font-size: 0.7em;
+}
+.morewith{ /*Inside .unsplashpricing*/
+  text-align: center;
+  margin-top: 3em;
+  padding-top: 2em;
+}
+.gridmid{ /*Inside unsplashpricing*/
+  margin-top: 6em;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 2em;
+  row-gap: 0.5em;
+  margin-left: -2em;
+  margin-right: -2em;
+}
+.nopadcol, .padcol{ /*Group of element inside .gridmid*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow:hidden;
+  gap: 1em;
+}
+.nopadcol img, .padcol img{
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.padcol{ /*Additional property for .padcol*/
+  margin-top: 3em;
+  padding-top: 2em;
+}
+.backgroundfafafa{ /*Use to set property to <section> */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #fafafa;
+}
+.faq{ /*Inside <section class backgroundfafafa>*/
+  margin-top: 3em;
+  display: flex;
+  gap: 1.3em;
+  font-size: 2em;
+  padding: 2em;
+  width: 100%;
+  justify-content: space-between;
+}
+.fre p{ /*Inside .faq*/
+  font-size: 0.7em;
+  line-height: 1.4;
+}
+.ans{ /*Inside .faq*/
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+}
+.ans details{
+  margin-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #d1d1d1;
+  font-weight: 700;
+  font-size: 0.8em;
+}
+.ans summary{
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+summary+p{ /*Properties to set <p> come after <summary> inside .ans*/
+  font-size: 0.7em;
+  font-weight: 200;
+}
+#limited{ /*Position at last <section> of page*/
+  padding: 2em;
+  margin-top: 1em;
+  width: 50%;
+  color: gray;
+}
+.left{ /*Div that take place in left of .faq before .footer*/
+  width: 33.3%;
+}
+.left h6,.right h6{
+  font-size: 0.7em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.left p{
+  font-size: 0.5em;
+  margin-top: 1.2em;
+}
+.left a, .right a{
+  color: gray;
+  text-decoration: none;
+}
+.left ul,.right ul{
+  margin: 0;
+  padding: 0;
+}
+.left li,.right li{
+  font-size: 15px;
+  list-style: none;
+  margin-top: 1em;
+}
+.right{ /*Div that take place in left of .faq before .footer*/
+  display: flex;
+  flex-wrap: wrap;
+  width: 66.6%;
+}
+.right a:hover,.left a:hover{
+  color: black;
+}
+.colinright{ /*Inside of .right*/
+  width: 33.3%;
+}
+.footer{ /*Lowest of html page*/
+  border-top: 1px solid #d1d1d1;
+  margin: 2em;
+  margin-top: 0;
+  padding-top: 1em;
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+  justify-content: space-between;
+}
+.fooleft ul,.fooright ul{
+  margin: 0;
+  padding: 0;
+}
+.fooleft li,.fooright li{
+  float: left;
+  list-style-type: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.fooleft li + li{
+  margin-left: 1.5em;
+}
+.fooleft a{
+  text-decoration: none;
+  color: grey;
+}
+.fooright li{
+  margin-left: 1em;
+  opacity: 0.6;
+}
+a:hover{
+  color:black; 
+}
+@media screen and (max-width:320px){
+  #price span{
+    margin-left: 0.75em;
+  }
+  .extendbox span{
+    margin-left: 0 !important;
+  }
+  .picturegrid{
+    display: none;
+  }
+  .gridwhygo{
+    padding: 1em;
+  }
+  .additionalimages{
+    flex-wrap: wrap ;
+  }
+  .addiinfo{
+    padding: 1.5em;
+  }
+  .Twoblock1 header, .Twoblock2 header{
+    padding: 2em 3em;
+    font-size: x-small;
+  }
+  .Twoblock2 img{
+    padding: 2em;
+    margin-top: 0.5em;
+    border-radius: 4em;
+  }
+  .unsplashpricing {
+    padding: 0.5em;
+  }
+  .setcenter .getunsplash{
+    width: 100% !important;
+  }
+  .gridmid{
+    grid-template-columns: 1fr 1fr;
+  }
+  .padcol{
+    display: none;
+  }
+  .nopadcol{
+    height: 100%;
+  }
+  .faq{
+    padding: 0.5em;
+    flex-wrap: wrap;
+  }
+  .ans{
+    width: 100%;
+  }
+  #limited{
+    width: 100%;
+    padding: 0;
+  }
+  .left{
+    width: 100%;
+  }
+  .right{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .colinright{
+    width: 100%;
+  }
+  .footer{
+    margin: 0.25em;
+    display: block;
+  }
+  .fooleft ul{
+    display: flex;
+  }
+  .fooright{
+    margin-top: 0.5em;
+  }
+}

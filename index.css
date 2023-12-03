@@ -1,0 +1,396 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  background-color: white;
+  font-family: Helvetica Neue, Helvetica, Ubuntu, Roboto, Noto, Segoe UI, Arial,
+    sans-serif;
+  box-sizing: border-box;
+}
+.navigator { /* Control Whole Nav bar (Have upper and lowernav)*/
+  background-color: white;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed; /*Fixed navbar at the top*/
+  z-index: 100; /*Set layer to number 100*/
+  padding-left: 1em; /*Add space*/
+  padding-top: 0.5em; /*Add space*/
+  @media screen and (max-width: 320px) {
+    padding: 0;
+    position: relative;
+  }
+}
+.topnavi { /*Focus on top nav*/
+  display: flex; /* Set display to flex for responsive*/
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+  }
+  @media screen and (max-width: 320px) {
+    justify-content: stretch;
+  }
+}
+.searchlogo { /*Contains leftside of topnavbar (Icon and searchbar)*/
+  display: flex;
+  align-items: center;
+}
+form { /*Set property to <form> tag*/
+  margin: 0;
+}
+.searchbar { /*Control search input bar*/
+  margin-left: 2em;
+  height: 100%;
+  box-sizing: border-box;
+  border: thin solid #ccc;
+  border-radius: 1.8em;
+  outline: none;
+  font-size: 1em;
+  background-color: transparent;
+  padding: 12px 6px 12px 40px;
+  width: 50vw;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 13px center;
+  background-color: whitesmoke;
+  @media screen and (max-width: 1024px) {
+    width: 75vw;
+  }
+  @media screen and (max-width: 320px) {
+    width: 55vw;
+  }
+}
+.threeright, /* Topnavbar has Explore Advertise Unsplash+ as link this class group it*/
+.login, /*Maintain Login same property as .threeright group*/
+.twoleft { /*In lowernavi has 2 elements at the left side before | so Group it as class name twoleft*/
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  @media screen and (max-width: 1024px) {
+    display: none;  /*When screen size is less than 1024px don't want to show it (.login and .threeright)*/
+  }
+}
+.twoleft { /* But don't want it has same property when use @media so write it seperately*/
+  @media screen and (max-width: 1024px) {
+    display: flex; 
+    flex-direction: row;
+    flex-shrink: 0;
+  }
+}
+.threeright ul, /*Set property to <ul> tag under all of that class*/
+.login ul,
+.twoleft ul,
+.trending ul {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+}
+.threeright li, /*Set property to <li> tag under all of that class*/
+.login li,
+.twoleft li,
+.trending li {
+  list-style-type: none;
+  margin-left: 2em;
+}
+.threeright a, /*Set property to <a> tag under all of that class*/
+.login a,
+.twoleft a {
+  text-decoration: none;
+  color: grey;
+  font-size: 14px;
+}
+.verticalline { /*This class create Horizontal line that used in navbar*/
+  margin-left: 2em;
+  border-left: 1px solid #ccc;
+  height: 3em;
+  margin-right: 2em;
+  @media screen and (max-width: 1024px) { /*When screen size is less than 1024px hide the border but space still remain*/
+    border: none;
+  }
+  @media screen and (max-width: 747px) { /*When screen size is less than 747px decrease the margin*/
+    margin: 0em 0.5em 0em 0.5em;
+    
+  }
+}
+#submitphoto { /*Set property to specific point <button> tag use at topnav only*/
+  background-color: #fff;
+  border-color: #d1d1d1;
+  color: #767676;
+  margin-left: 1em;
+  width: 10em;
+  height: 2.5em;
+  text-align: center;
+  border-radius: 0.4em;
+  border-style: solid;
+  cursor: pointer;
+  @media screen and (max-width: 1024px) { /*When screen size is less than 1024px hide the button*/
+    display: none;
+  }
+}
+.Falldownnav { /*Set property to Falldownnav position at top right side working as hidden menu*/
+  background-color: #fff;
+  border-width: 0;
+  margin-left: 1em;
+  cursor: pointer;
+  margin-top: 8%;
+  @media screen and (max-width: 1024px) { /*When screen size is less than 1024px adjust new margin scale*/
+    margin-top: 5%;
+    margin-left: auto;
+  }
+}
+.lownavi { /*Setto lownavi which position at bottom of wholenav*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #d1d1d1;
+  overflow: hidden;
+}
+.twoleft li:first-child { /*Focus on first li inside .twoleft class*/
+  margin: 0;
+}
+#underline { /*Use as underline to hilight under Editorial link (index)*/
+  border-bottom: 2.5px solid black;
+  width: 4%;
+  margin-left: 1em;
+  margin-top: -0.75em;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+.wholebody { /*Control every content except navbar*/
+  margin-top: 10em; /*Space from navbar*/
+  padding: 2em;
+  @media screen and (max-width: 320px) {
+    padding:0;
+  }
+}
+.firstgrid { /*First part of content*/
+  display: grid; /*Set as grid*/
+  grid-template-columns: 1fr 0.5fr 0.5fr; /*Make 3 col*/
+  gap: 1.1em;
+  overflow: hidden;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr; /*Decrease from 3 to 2 col*/
+    
+  }
+  @media screen and (max-width: 320px) {
+    padding: 2em;
+  }
+}
+.leftfirst { /*First div in firstgrid class*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.leftfirst h1 { /*Set property for h1 in leftfirst class*/
+  font-size: 2.5em;
+}
+.leftfirst p { /*Set property for p in leftfirst class*/
+  font-size: 1.2em;
+}
+.leftfirst p + p { /*Set property for p that come after p in leftfirst class*/
+  margin: 0;
+  padding: 0;
+}
+.trending { /*Trending class in Leftfirst class*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+}
+.trending h5 { /*Set property for h5 in Leftfirst class*/
+  font-weight: 500;
+  font-size: 1em;
+  margin-right: 0.2em;
+}
+.trending li { /*Set property for li in leftfirst class*/
+  margin-left: 0;
+  color: grey !important;
+}
+#findimg2 { /*Div inside leftfirst class*/
+  border: thin solid #ccc;
+  border-radius: 5px;
+  width: 43em;
+  padding: 4px;
+  padding-left: 40px;
+  height: 25px;
+  background: transparent
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat 13px center;
+  background-color: whitesmoke;
+  @media screen and (max-width: 320px) {
+    width: 70vw;
+  }
+}
+.secondtab,
+.thirdtab { /*Element in firstgrid column*/
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  border: 1px solid #d1d1d1;
+  border-radius: 1em;
+  padding: 1em;
+  @media screen and (max-width: 748px) {
+    display: none;
+  }
+}
+.secondtab{ /*Hide secondtab div because firstgrid show only 1 column*/
+  @media screen and (max-width: 817px) {
+    display: none;
+  }
+}
+.thirdtab { /*Hide thirdtab div because firstgrid will show only 2 column*/
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+.uppertag { /*Top element inside Secondtab*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  height: 50%;
+  overflow: hidden;
+}
+.sectabbut {/*Element inside uppertag design as button */
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #767676;
+  padding: 0.2em 0.5em;
+  border-radius: 0.4em;
+  border: 1px solid #d1d1d1;
+  cursor: pointer;
+  text-decoration: none;
+}
+.sectabbut:hover { /*When hover change color*/
+  color: black;
+  border-color: black;
+  transition: 0.25s ease-in;
+}
+#trendingsearch { /*Element inside secondtab*/
+  margin-top: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1em;
+  margin-left: 0;
+}
+#trendingsearch a { /*Trending search use tag <a>*/
+  color: black;
+}
+#trendingsearch a:hover {
+  color: #767676;
+  transition: 0.2s ease-in;
+}
+.thirdtab { /*Element inside firstgrid*/
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 1em;
+}
+.thirdtab img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1em;
+  transition: 0.5s ease;
+}
+.realcontent { /*Contains all of content (part of picture gallery)*/
+  margin-top: 4em;
+}
+.gridpic { /*Element inside realcontent*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2em;
+  overflow: hidden;
+  justify-items: center;
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    
+  }
+}
+.col { /*Element inside gridpic seperate by column*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  row-gap: 2em;
+  width: 100%;
+}
+.col:last-child{
+  @media screen and (max-width: 1024px) {
+    display: none !important;
+    
+  }
+}
+.image { /*Image inside gridpic seperate by column*/
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+.image img { /*<img> inside .image*/
+  transition: 0.5s ease;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  object-fit: contain;
+  @media screen and (max-width: 768px) {
+    height: auto;
+    max-width: 100%;
+  }
+}
+.imageinfo { /*Element inside .image will be cover image*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 20px;
+  box-sizing: border-box;
+  font-weight: 300;
+  padding-left: 20%;
+  text-align: justify;
+}
+.image:hover .imageinfo {
+  opacity: 0.7;
+}
+.imageinfo h5 {
+  font-size: 1em;
+}
+.imageinfo p {
+  margin-top: -2.3em;
+  font-size: 0.6em;
+}
+.space { /*Element inside .imageinfo*/
+  position: absolute;
+  bottom: 2%;
+  left: 10%;
+  text-align: justify;
+}
